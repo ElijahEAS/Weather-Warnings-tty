@@ -8,3 +8,7 @@ git clone "https://github.com/Tails98/Weather-Warnings-tty.git"
 chmod +x get jq-linux64 start typefx.sh
 
 ./start
+
+# TODO
+
+make county/location configurable
