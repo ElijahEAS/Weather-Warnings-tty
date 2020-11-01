@@ -1,0 +1,16 @@
+rm -f data1.txt
+clear
+echo -ne "\n"
+echo "started data download and processing"
+./get > data1.txt
+echo -ne "\n"
+echo "finished data download and processing"
+echo -ne "\n"
+echo -ne "please wait..."
+sleep 6
+echo -ne "\n"
+clear
+./typefx.sh
+echo -ne "\n"
+rm -f data1.txt
+

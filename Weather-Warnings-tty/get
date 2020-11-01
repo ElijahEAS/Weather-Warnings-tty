@@ -1,0 +1,26 @@
+rm -f data.txt
+clear
+curl -s "https://api.weather.gov/alerts/active/zone/OKZ067" > data.txt
+echo -ne "\n"
+cat data.txt | ./jq-linux64 --raw-output '.title'
+echo -ne "\n"
+echo -ne "event/s: " && cat data.txt | ./jq-linux64 --raw-output '.features[].properties.event'
+echo -ne "\n"
+echo -ne "headline/s: " && cat data.txt | ./jq-linux64 --raw-output '.features[].properties.headline'
+echo -ne "\n"
+echo -ne "NWSheadline/s: " && cat data.txt | ./jq-linux64 --raw-output '.features[].properties.parameters.NWSheadline[]'
+echo -ne "\n"
+echo -ne "severity/ies: " && cat data.txt | ./jq-linux64 --raw-output '.features[].properties.severity'
+echo -ne "\n"
+echo -ne "time/s sent: " && cat data.txt | ./jq-linux64 --raw-output '.features[].properties.sent'
+echo -ne "\n"
+echo -ne "time/s expires: " && cat data.txt | ./jq-linux64 --raw-output '.features[].properties.expires'
+echo -ne "\n"
+echo -ne "description/s: " && cat data.txt | ./jq-linux64 --raw-output '.features[].properties.description'
+echo -ne "\n"
+echo -ne "instruction/s: " && cat data.txt | ./jq-linux64 --raw-output '.features[].properties.instruction'
+echo -ne "\n"
+echo -ne "\n"
+rm -f data.txt
+echo -ne "\n"
+
