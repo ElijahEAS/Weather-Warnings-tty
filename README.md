@@ -11,4 +11,4 @@ chmod +x get jq-linux64 start typefx.sh
 
 # TODO
 
-make county/location configurable
+make county/location configurable.
